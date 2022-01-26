@@ -1,0 +1,11 @@
+<?php
+
+namespace App\Http\Repositories;
+
+class DummyRepository
+{
+    public function getModel()
+    {
+        //return new ModelClass();
+    }
+}
