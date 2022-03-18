@@ -22,7 +22,6 @@ class LoginController extends Controller
     {
         if (!auth()->guard()->attempt($request->only('email','password'))) {
             throw new AuthenticationException();
-
         }
     }
     /**
@@ -32,6 +31,6 @@ class LoginController extends Controller
     * @return \Illuminate\Http\Response
     */
     public function logout(Request $request) {
-        $this->guard()->logout();
+        auth()->guard()->logout();
     }
 }
