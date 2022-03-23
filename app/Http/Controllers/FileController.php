@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\File;
 use Illuminate\Http\Request;
+use App\Http\Requests\FileSignedRequest;
 use App\Http\Repositories\FileRepository;
 
 class FileController extends Controller
@@ -32,7 +33,7 @@ class FileController extends Controller
 
         return $this->fileRepository->delete($file);
     }
-    public function signedURL(Request $request)
+    public function signedURL(FileSignedRequest $request)
     {
         return $this->fileRepository->signedURL($request);
     }

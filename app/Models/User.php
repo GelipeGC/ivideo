@@ -52,9 +52,14 @@ class User extends Authenticatable
     {
        return $this->hasOneThrough(
                     Plan::class,
-                    Subscription::class, 'user_id', 'stripe_id', 'id', 'stripe_plan'
+                    Subscription::class, 'user_id', 'stripe_id', 'id', 'name'
                 )
                 ->whereNull('subscriptions.ends_at')
                 ->withDefault(Plan::free()->toArray());
+    }
+
+    public function usage()
+    {
+        return $this->files->sum('size');
     }
 }
