@@ -25,4 +25,9 @@ class File extends Model
             Storage::disk('s3')->delete($file->path);
         });
     }
+
+    public function link()
+    {
+        return $this->hasOne(FileShare::class);
+    }
 }

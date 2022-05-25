@@ -56,4 +56,11 @@ class FileTest extends TestCase
                     ])
                     ->assertSuccessful();
     }
+    /** @test */
+    function a_user_can_a_get_client_secret_intent()
+    {
+        $this->actingAs($this->user)
+                ->getJson("{$this->apiPath}/subscriptions/intent")
+                ->assertSuccessful();
+    }
 }

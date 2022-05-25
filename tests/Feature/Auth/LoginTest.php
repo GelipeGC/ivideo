@@ -30,4 +30,24 @@ class LoginTest extends TestCase
         ->assertJson(['token_type' => 'bearer']) */;
         $t->dump();
     }
+    /** @test */
+    function a_user_can_change_his_password()
+    {
+        $this->actingAs($this->user)
+            ->patch("{$this->apiPath}/changePassword", [
+                'password' => 'password',
+                'new_password' => '12345678'
+            ])
+            ->assertSuccessful();
+    }
+    /** @test */
+    function a_user_cannot_change_password_when_current_password_is_incorrect()
+    {
+        $this->actingAs($this->user)
+            ->patch("{$this->apiPath}/changePassword", [
+                'password' => 'password-incorrect',
+                'new_password' => '12345678'
+            ])
+            ->assertStatus(422);
+    }
 }

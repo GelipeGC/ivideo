@@ -38,7 +38,7 @@ class PlansTableSeeder extends Seeder
                 'price' => 1000,
                 'is_free' => false,
                 'stripe_id' => 'price_1KdQB7CyB0UV0UM5nFio4K77', //id of spripe dashboard
-                'storage' => 10000
+                'storage' => 31457280
             ],
             [
                 'name' => 'Plata',
@@ -46,7 +46,7 @@ class PlansTableSeeder extends Seeder
                 'price' => 500,
                 'is_free' => false,
                 'stripe_id' => 'price_1KdQBWCyB0UV0UM5CoJKlNBD', //id of spripe dashboard
-                'storage' => 5000
+                'storage' => 20971520
             ],
             [
                 'name' => 'Gratis',
@@ -54,7 +54,7 @@ class PlansTableSeeder extends Seeder
                 'price' => 0,
                 'is_free' => true,
                 'stripe_id' => null, //id of spripe dashboard
-                'storage' => 500
+                'storage' => 10485760
             ]
         ];
     }
